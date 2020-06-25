@@ -77,8 +77,8 @@
                 uv.x -= 1.0-is_left;
 
                 // Calculate the Rectilinear Coordinates from the UVs
-                float3 rectilinear_coordinate = float3(polyval2d(1.0 - uv.x, uv.y, uv_to_rect_x),
-                                                       polyval2d(1.0 - uv.x, uv.y, uv_to_rect_y), 1.0);
+                float3 rectilinear_coordinate = float3(polyval2d(/*1.0 -*/ uv.x, uv.y, uv_to_rect_x),
+                                                       polyval2d(/*1.0 -*/ uv.x, uv.y, uv_to_rect_y), 1.0);
                 
                 // Project the Rectilinear Coordinate through this camera matrix
                 float2 distorted_uv = WorldToViewport(camera_matrix, rectilinear_coordinate);
